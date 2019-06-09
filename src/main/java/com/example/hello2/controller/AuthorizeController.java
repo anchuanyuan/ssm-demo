@@ -1,7 +1,10 @@
 package com.example.hello2.controller;
 
 import java.io.IOException;
+import java.util.UUID;
 
+import com.example.hello2.mapper.UserMapper;
+import com.example.hello2.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +19,8 @@ public class AuthorizeController {
 	
 	@Autowired
 	private GithubProvider githubProvider;
+	@Autowired
+	private UserMapper userMapper;
 	
 	
 	@GetMapping("/callback")
@@ -30,7 +35,23 @@ public class AuthorizeController {
 		String accesstoken =githubProvider.getaAcessToken(accessTokenDTO);
 		GithubUser githubUser =  githubProvider.getUserInfo(accesstoken);
 		System.out.println(githubUser.getId());
-		return "index";
+
+		if (githubUser!= null){
+			User user = new User();
+			user.setToken(UUID.randomUUID().toString());
+			//user.setName(githubUser.getName());
+			user.setName("acy");
+			user.setId(githubUser.getId());
+			//user.setAccount(githubUser.getBioString());
+			user.setAccount("bbb");
+			user.setGmtCreate(System.currentTimeMillis());
+			user.setGmtModified(user.getGmtCreate());
+			System.out.println(user);
+			userMapper.insert(user);
+		}else {
+			return "redirect:/";
+		}
+		return "redirect:/";
 	}
 
 }
