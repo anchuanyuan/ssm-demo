@@ -39,7 +39,7 @@ public class GithubUser {
 		}
 
 		public GithubUser() {
-			super();
+
 		}
 
 	
