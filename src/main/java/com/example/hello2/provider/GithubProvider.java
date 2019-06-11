@@ -30,7 +30,7 @@ public class GithubProvider {
 	      .build();
 	  Response response = client.newCall(request).execute(); 
 	     String anstring =response.body().string();
-	     System.out.println(anstring);
+	     //System.out.println(anstring);
 	     String s2 = anstring.split("=")[1];
 	     String access_token=s2.split("&")[0];
 	     System.out.println(access_token);
