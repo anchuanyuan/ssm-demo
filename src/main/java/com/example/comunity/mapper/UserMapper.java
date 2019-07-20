@@ -1,6 +1,6 @@
-package com.example.hello2.mapper;
+package com.example.comunity.mapper;
 
-import com.example.hello2.model.User;
+import com.example.comunity.model.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

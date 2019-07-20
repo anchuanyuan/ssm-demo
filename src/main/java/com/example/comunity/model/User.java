@@ -1,4 +1,4 @@
-package com.example.hello2.model;
+package com.example.comunity.model;
 
 public class User {
     private Integer id;

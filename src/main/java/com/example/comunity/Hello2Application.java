@@ -1,4 +1,4 @@
-package com.example.hello2;
+package com.example.comunity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.example.hello2.dto;
+package com.example.comunity.dto;
 
 public class AccessTokenDTO {
 	private String client_id;

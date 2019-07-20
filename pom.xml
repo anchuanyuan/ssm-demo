@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>hello2</artifactId>
+	<artifactId>community</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hello2</name>
+	<name>community</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -19,6 +19,7 @@
 	</properties>
 
 	<dependencies>
+
 
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
@@ -34,8 +35,6 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-
-
 		</dependency>
 
 
@@ -79,6 +78,19 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>5.2.4</version>
+				<configuration>
+					<driver>com.mysql.cj.jdbc.Driver</driver>
+					<url>jdbc:mysql://localhost:3306/ssm_demo?serverTimezone=GMT%2B8</url>
+					<user>root</user>
+					<password>123456</password>
+				</configuration>
+
+			</plugin>
+
 		</plugins>
 	</build>
 

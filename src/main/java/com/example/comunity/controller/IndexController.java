@@ -1,7 +1,7 @@
-package com.example.hello2.controller;
+package com.example.comunity.controller;
 
-import com.example.hello2.mapper.UserMapper;
-import com.example.hello2.model.User;
+import com.example.comunity.mapper.UserMapper;
+import com.example.comunity.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +26,7 @@ public class IndexController {
 			//System.out.println(cookies[i].getName());
 			if (cookies[i].getName().equals("token")){
 				String token = cookies[i].getValue();
-				System.out.println(token);
+				//System.out.println(token);
 				User user = userMapper.findByToken(token);//请复习局部变量！！！！！！！
 				//System.out.println(user);
 				if (user!=null){

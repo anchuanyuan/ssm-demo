@@ -1,4 +1,4 @@
-package com.example.hello2.dto;
+package com.example.comunity.dto;
 
 public class GithubUser {
 		private String name;
