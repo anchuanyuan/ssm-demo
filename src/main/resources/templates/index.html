@@ -48,6 +48,7 @@
 				<ul class="nav navbar-nav navbar-right">
 
 					<!--没登录就显示登录按钮	-->
+					<li><a href="/publish">发布问题</a></li>
 					<li th:if="${session.user == null} ">
 						<a href="https://github.com/login/oauth/authorize?client_id=ad5534e20ea4e811a1fe&redirect_uri=http://localhost:8087/callback&state=1">登录</a>
 					</li>
