@@ -22,8 +22,6 @@ import javax.servlet.http.HttpServletResponse;
 public class PublishAticleController {
 
 
-
-
     @Autowired
     private AticleMapper aticleMapper;
 
@@ -44,13 +42,15 @@ public class PublishAticleController {
     public String toDoPublishAticle(
             Model model,
 
-            @RequestParam(name = "title",required = false) String title,
-            @RequestParam(name = "description" ,required = false) String description,
-            @RequestParam(name = "tag",required = false) String tag,
+            @RequestParam(name = "title", required = false) String title,
+            @RequestParam(name = "description", required = false) String description,
+            @RequestParam(name = "tag", required = false) String tag,
             HttpServletRequest request,
             HttpServletResponse response) {
-            User user = null;
-            Cookie[] cookies = request.getCookies();// tip:ctrl+alt+v 抽取变量
+        User user = null;
+        Cookie[] cookies = request.getCookies();// tip:ctrl+alt+v 抽取变量
+        if (cookies != null && cookies.length != 0) {
+
             for (int i = 0; i < cookies.length; i++) {
                 //System.out.println(cookies[i].getName());
                 if (cookies[i].getName().equals("token")) {
@@ -64,21 +64,22 @@ public class PublishAticleController {
                     }
 
                 }
+
             }
+        }
 
-        Article  article =new Article();
-            article.setTitle(title);
-            article.setDescription(description);
-            article.setTag(tag);
-            article.setGmtCreate(System.currentTimeMillis());
-            article.setGmtModified(article.getGmtCreate());
-            article.setId(user.getId());
+        Article article = new Article();
+        article.setTitle(title);
+        article.setDescription(description);
+        article.setTag(tag);
+        article.setGmtCreate(System.currentTimeMillis());
+        article.setGmtModified(article.getGmtCreate());
+        article.setId(user.getId());
         System.out.println("article");
-            aticleMapper.addAticle(article);
+        aticleMapper.addAticle(article);
 
 
-            return "index";
-
+        return "index";
 
 
     }

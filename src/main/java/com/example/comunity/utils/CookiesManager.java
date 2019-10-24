@@ -3,6 +3,7 @@ package com.example.comunity.utils;
 import com.example.comunity.mapper.UserMapper;
 import com.example.comunity.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +15,4 @@ import javax.servlet.http.HttpServletRequest;
  * @version:1.0
  */
 public class CookiesManager {
-
-
 }
